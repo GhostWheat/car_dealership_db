@@ -43,7 +43,11 @@ BEGIN
 END;
 $MAIN$;
 
-CREATE OR REPLACE FUNCTION insert_customers(fname VARCHAR(50),lname VARCHAR(50),licence VARCHAR(50))
+CREATE OR REPLACE FUNCTION insert_customers(
+	fname VARCHAR(50),
+	lname VARCHAR(50),
+	licence VARCHAR(50)
+)
 RETURNS void
 LANGUAGE plpgsql
 AS $MAIN$
@@ -54,7 +58,15 @@ END;
 $MAIN$;
 
 
-CREATE OR REPLACE FUNCTION insert_cards(name_ VARCHAR(100), number_ VARCHAR(50), address VARCHAR(100), zip VARCHAR(20), expiry VARCHAR(50), sec_code, customer_id)
+CREATE OR REPLACE FUNCTION insert_cards(
+	name_ VARCHAR(100),
+	number_ VARCHAR(50),
+	address VARCHAR(100),
+	zip VARCHAR(20),
+	expiry VARCHAR(50),
+	sec_code INTEGER,
+	customer_id INTEGER
+)
 RETURNS void
 LANGUAGE plpgsql
 AS $MAIN$
@@ -65,7 +77,13 @@ END;
 $MAIN$;
 
 
-CREATE OR REPLACE FUNCTION insert_tickets(car_serial,mech_id,parts_needed,date,price)
+CREATE OR REPLACE FUNCTION insert_tickets(
+	car_serial INTEGER,
+	mech_id INTEGER,
+	parts_needed BOOLEAN,
+	date DATE,
+	price DECIMAL(12,2)
+)
 RETURNS void
 LANGUAGE plpgsql
 AS $MAIN$
@@ -75,7 +93,10 @@ BEGIN
 END;
 $MAIN$;
 
-CREATE OR REPLACE FUNCTION insert_mechanics(fname, lname)
+CREATE OR REPLACE FUNCTION insert_mechanics(
+	fname VARCHAR(50),
+	lname VARCHAR(50)
+)
 RETURNS void
 LANGUAGE plpgsql
 AS $MAIN$
@@ -85,7 +106,10 @@ BEGIN
 END;
 $MAIN$;
 
-CREATE OR REPLACE FUNCTION insert_parts_reqs(serv_ticket_id, part_id)
+CREATE OR REPLACE FUNCTION insert_parts_reqs(
+	serv_ticket_id INTEGER,
+	part_id INTEGER
+)
 RETURNS void
 LANGUAGE plpgsql
 AS $MAIN$
@@ -95,7 +119,10 @@ BEGIN
 END;
 $MAIN$;
 
-CREATE OR REPLACE FUNCTION insert_parts_catalogue(part_name, price)
+CREATE OR REPLACE FUNCTION insert_parts_catalogue(
+	part_name VARCHAR(100),
+	price DECIMAL(10,2)
+)
 RETURNS void
 LANGUAGE plpgsql
 AS $MAIN$
