@@ -153,8 +153,6 @@ SELECT insert_customers('Abe','Lincoln','111111111');
 SELECT insert_customers('Nappy','Bonaparte','123123123');
 SELECT insert_customers('Sigmund','Freud','969696969');
 
--- DELETE FROM customers
-SELECT * FROM cards_on_file
 ALTER SEQUENCE cards_on_file_card_id_seq RESTART;
 SELECT insert_cards('Swan E-G','1111222233334444','1234 Main Street Chicago','60666','01/25',666,1);
 SELECT insert_cards('Abraham Lincoln','5555666677778888','4321 Main Street Springfield','60000','01/24',111,2);
@@ -180,8 +178,6 @@ SELECT insert_mechanics('Large','Lu');
 SELECT insert_mechanics('Huge','Henri');
 SELECT insert_mechanics('Lil','Guy');
 
-select * from mechanics
-
 -- THIRD: Service Tickets, Parts Catalogue, Parts Requisitions
 ALTER SEQUENCE service_tickets_serv_ticket_id_seq RESTART;
 SELECT insert_tickets(1,1,true,'1/2/2022',23.12);
@@ -196,7 +192,31 @@ SELECT insert_parts_catalogue('SNOW TIRES',9999.99);
 SELECT insert_parts_catalogue('SUSPENSION',2.50);
 
 ALTER SEQUENCE parts_requisitions_parts_requisition_id_seq RESTART;
-SELECT insert_parts_req(1,1);
-SELECT insert_parts_req(1,2);
-SELECT insert_parts_req(1,2);
-SELECT insert_parts_req(1,4);
+SELECT insert_parts_reqs(1,1);
+SELECT insert_parts_reqs(1,2);
+SELECT insert_parts_reqs(1,2);
+SELECT insert_parts_reqs(1,4);
+
+-- And here are the after-insertion additions:
+
+ALTER TABLE cars_owned
+ADD COLUMN is_serviced BOOLEAN;
+UPDATE cars_owned
+SET is_serviced = FALSE;
+
+SELECT * FROM cars_owned
+
+CREATE OR REPLACE PROCEDURE oil_changed(
+	car_ser INTEGER
+)
+LANGUAGE plpgsql
+AS $MAIN$
+BEGIN
+	UPDATE cars_owned
+	SET is_serviced = TRUE
+	WHERE cars_owned.car_serial = car_ser AND is_serviced = False;
+END;
+$MAIN$;
+
+CALL oil_changed(1)
+SELECT * FROM cars_owned
