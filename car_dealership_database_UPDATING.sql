@@ -134,20 +134,20 @@
 
 -------------------------------------------
 -- FIRST: Sellers, Customers, Cards On File
-SELECT insert_sellers();
-SELECT insert_sellers();
-SELECT insert_sellers();
-SELECT insert_sellers();
+SELECT insert_sellers("John","Smith");
+SELECT insert_sellers("Theodore","Logan");
+SELECT insert_sellers("William","Preston");
+SELECT insert_sellers("Bob","Robertson");
 
-SELECT insert_customers();
-SELECT insert_customers();
-SELECT insert_customers();
-SELECT insert_customers();
+SELECT insert_customers("Swan","E-G");
+SELECT insert_customers("Abe","Lincoln");
+SELECT insert_customers("Nappy","Bonaparte");
+SELECT insert_customers("Sigmund","Freud");
 
-SELECT cards();
-SELECT cards();
-SELECT cards();
-SELECT cards();
+SELECT cards("Swan E-G","1111222233334444","1234 Main Street Chicago","60666","01/25",666,1);
+SELECT cards("Abraham Lincoln","5555666677778888","4321 Main Street Springfield","60000","01/24",111,2);
+SELECT cards("Napoleon Jiberious Bonaparte","1234432112349999","101 Rue Ste Germaine Paris","4444-0123","01/25",989,3);
+SELECT cards("Robert R. Robertson","666444333111111111","123 Ztreyte St","99998","09/26",010,4);
 
 -- SECOND: Cars Owned, Sales Invoices, Mechanics
 SELECT insert_cars_owned();
