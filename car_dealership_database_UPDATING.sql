@@ -134,7 +134,7 @@
 
 -------------------------------------------
 -- FIRST: Sellers, Customers, Cards On File
-SELECT insert_sellers("John","Smith");
+SELECT insert_sellers("John","Wick");
 SELECT insert_sellers("Theodore","Logan");
 SELECT insert_sellers("William","Preston");
 SELECT insert_sellers("Bob","Robertson");
@@ -152,29 +152,29 @@ SELECT cards("Sigmund H Freud","666444333111111111","123 Ztreyte Wien","99998","
 -- SECOND: Cars Owned, Sales Invoices, Mechanics
 SELECT insert_cars_owned("Toyota","Acura",2005,"Red",1,"454545454545ABXY");
 SELECT insert_cars_owned("Toyota","Acura",2023,"Banana Yellow",1,"23232323232323LALO");
-SELECT insert_cars_owned("French","Horse",1808,"Chestnut",3,"NEEEEEEEEEEIIIGH");
+SELECT insert_cars_owned("French","Horse",1810,"Chestnut",3,"NEEEEEEEEEEIIIGH");
 SELECT insert_cars_owned("Bugatti","Chiron Sport",2023,"Fire-Engine Red",4,"P3NF1FT33NCLUB");
 
 SELECT insert_sales_invoices(1,1,05/26/2005,20000.99);
 SELECT insert_sales_invoices(1,2,3/17/2023,20001.08);
-SELECT insert_sales_invoices();
-SELECT insert_sales_invoices();
+SELECT insert_sales_invoices(2,3,6/17/1815,9999999999.99);
+SELECT insert_sales_invoices(3,4,1/01/2023,20002.08);
 
-SELECT insert_mechanics();
-SELECT insert_mechanics();
-SELECT insert_mechanics();
-SELECT insert_mechanics();
+SELECT insert_mechanics("Big","Joe");
+SELECT insert_mechanics("Large","Lu");
+SELECT insert_mechanics("Huge","Henri");
+SELECT insert_mechanics("Lil","Guy");
 
 -- THIRD: Service Tickets, Parts Catalogue, Parts Requisitions
-SELECT insert_tickets();
-SELECT insert_tickets();
-SELECT insert_tickets();
-SELECT insert_tickets();
+SELECT insert_tickets(1,1,true,01/02/2022,23.12);
+SELECT insert_tickets(1,2,true,01/02/2022,23.12);
+SELECT insert_tickets(1,3,true,01/02/2022,23.12;
+SELECT insert_tickets(2,4,false,01/02/2022.77.11);
 
-SELECT insert_parts_catalogue();
-SELECT insert_parts_catalogue();
-SELECT insert_parts_catalogue();
-SELECT insert_parts_catalogue();
+SELECT insert_parts_catalogue("MEGABASS SUBWOOFER",1.00);
+SELECT insert_parts_catalogue("PLASMA RIFLE, USED",1.50);
+SELECT insert_parts_catalogue("SNOW TIRES",9999.99);
+SELECT insert_parts_catalogue("");
 
 SELECT insert_parts_req();
 SELECT insert_parts_req();
