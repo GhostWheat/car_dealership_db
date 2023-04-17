@@ -135,13 +135,48 @@
 -------------------------------------------
 -- FIRST: Sellers, Customers, Cards On File
 SELECT insert_sellers();
+SELECT insert_sellers();
+SELECT insert_sellers();
+SELECT insert_sellers();
+
 SELECT insert_customers();
+SELECT insert_customers();
+SELECT insert_customers();
+SELECT insert_customers();
+
+SELECT cards();
+SELECT cards();
+SELECT cards();
 SELECT cards();
 
 -- SECOND: Cars Owned, Sales Invoices, Mechanics
 SELECT insert_cars_owned();
+SELECT insert_cars_owned();
+SELECT insert_cars_owned();
+SELECT insert_cars_owned();
+
 SELECT insert_sales_invoices();
+SELECT insert_sales_invoices();
+SELECT insert_sales_invoices();
+SELECT insert_sales_invoices();
+
+SELECT insert_mechanics();
+SELECT insert_mechanics();
+SELECT insert_mechanics();
 SELECT insert_mechanics();
 
 -- THIRD: Service Tickets, Parts Catalogue, Parts Requisitions
+SELECT insert_tickets();
+SELECT insert_tickets();
+SELECT insert_tickets();
+SELECT insert_tickets();
 
+SELECT insert_parts_catalogue();
+SELECT insert_parts_catalogue();
+SELECT insert_parts_catalogue();
+SELECT insert_parts_catalogue();
+
+SELECT insert_parts_req();
+SELECT insert_parts_req();
+SELECT insert_parts_req();
+SELECT insert_parts_req();
