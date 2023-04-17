@@ -147,13 +147,13 @@ SELECT insert_customers("Sigmund","Freud");
 SELECT cards("Swan E-G","1111222233334444","1234 Main Street Chicago","60666","01/25",666,1);
 SELECT cards("Abraham Lincoln","5555666677778888","4321 Main Street Springfield","60000","01/24",111,2);
 SELECT cards("Napoleon Jiberious Bonaparte","1234432112349999","101 Rue Ste Germaine Paris","4444-0123","01/25",989,3);
-SELECT cards("Robert R. Robertson","666444333111111111","123 Ztreyte St","99998","09/26",010,4);
+SELECT cards("Robert Roberto Robertson","666444333111111111","123 Ztreyte St","99998","09/26",010,4);
 
 -- SECOND: Cars Owned, Sales Invoices, Mechanics
-SELECT insert_cars_owned();
-SELECT insert_cars_owned();
-SELECT insert_cars_owned();
-SELECT insert_cars_owned();
+SELECT insert_cars_owned("Toyota","Acura",2005,"Red",1,"454545454545ABXY");
+SELECT insert_cars_owned("Toyota","Acura",2023,"Banana Yellow",1,"23232323232323LALO");
+SELECT insert_cars_owned("French","Horse",1808,"Chestnut",3,"NEEEEEEEEEEIIIGH");
+SELECT insert_cars_owned("Bugatti","Altavista",2023,"Fire-Engine Red",4,"P3NF1FT33NCLUB");
 
 SELECT insert_sales_invoices();
 SELECT insert_sales_invoices();
